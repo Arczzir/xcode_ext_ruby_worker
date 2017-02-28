@@ -1,0 +1,494 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		19D721611E659D3500F49225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D721601E659D3500F49225 /* AppDelegate.swift */; };
+		19D721631E659D3500F49225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19D721621E659D3500F49225 /* Assets.xcassets */; };
+		19D721661E659D3500F49225 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19D721641E659D3500F49225 /* MainMenu.xib */; };
+		19D721741E659D4E00F49225 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D721731E659D4E00F49225 /* Cocoa.framework */; };
+		19D721791E659D4E00F49225 /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D721781E659D4E00F49225 /* SourceEditorExtension.swift */; };
+		19D7217B1E659D4E00F49225 /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7217A1E659D4E00F49225 /* SourceEditorCommand.swift */; };
+		19D7217F1E659D4E00F49225 /* ruby_code_gen.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 19D721711E659D4E00F49225 /* ruby_code_gen.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		19D721911E659FEB00F49225 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7218F1E659FEB00F49225 /* Helper.swift */; };
+		19D721921E659FEB00F49225 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7218F1E659FEB00F49225 /* Helper.swift */; };
+		19D721931E659FEB00F49225 /* FileChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D721901E659FEB00F49225 /* FileChooser.swift */; };
+		19D721941E659FEB00F49225 /* FileChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D721901E659FEB00F49225 /* FileChooser.swift */; };
+		19D721991E65A00200F49225 /* Objc.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D721971E65A00200F49225 /* Objc.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		19D7217D1E659D4E00F49225 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 19D721551E659D3500F49225 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19D721701E659D4E00F49225;
+			remoteInfo = ruby_code_gen;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		19D721831E659D4E00F49225 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				19D7217F1E659D4E00F49225 /* ruby_code_gen.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		19D7215D1E659D3500F49225 /* xcode_ext_ruby_worker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xcode_ext_ruby_worker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		19D721601E659D3500F49225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		19D721621E659D3500F49225 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		19D721651E659D3500F49225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		19D721671E659D3500F49225 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19D721711E659D4E00F49225 /* ruby_code_gen.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ruby_code_gen.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		19D721731E659D4E00F49225 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		19D721771E659D4E00F49225 /* ruby_code_gen.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ruby_code_gen.entitlements; sourceTree = "<group>"; };
+		19D721781E659D4E00F49225 /* SourceEditorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorExtension.swift; sourceTree = "<group>"; };
+		19D7217A1E659D4E00F49225 /* SourceEditorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorCommand.swift; sourceTree = "<group>"; };
+		19D7217C1E659D4E00F49225 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19D721841E659D5A00F49225 /* xcode_ext_ruby_worker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = xcode_ext_ruby_worker.entitlements; sourceTree = "<group>"; };
+		19D7218F1E659FEB00F49225 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		19D721901E659FEB00F49225 /* FileChooser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileChooser.swift; sourceTree = "<group>"; };
+		19D721951E65A00100F49225 /* ruby_code_gen-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ruby_code_gen-Bridging-Header.h"; sourceTree = "<group>"; };
+		19D721961E65A00200F49225 /* Objc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Objc.h; sourceTree = "<group>"; };
+		19D721971E65A00200F49225 /* Objc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Objc.m; sourceTree = "<group>"; };
+		19D721981E65A00200F49225 /* codegen-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "codegen-Bridging-Header.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		19D7215A1E659D3500F49225 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19D7216E1E659D4E00F49225 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19D721741E659D4E00F49225 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19D721541E659D3500F49225 = {
+			isa = PBXGroup;
+			children = (
+				19D7215F1E659D3500F49225 /* xcode_ext_ruby_worker */,
+				19D721751E659D4E00F49225 /* ruby_code_gen */,
+				19D721721E659D4E00F49225 /* Frameworks */,
+				19D7215E1E659D3500F49225 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		19D7215E1E659D3500F49225 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				19D7215D1E659D3500F49225 /* xcode_ext_ruby_worker.app */,
+				19D721711E659D4E00F49225 /* ruby_code_gen.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		19D7215F1E659D3500F49225 /* xcode_ext_ruby_worker */ = {
+			isa = PBXGroup;
+			children = (
+				19D721841E659D5A00F49225 /* xcode_ext_ruby_worker.entitlements */,
+				19D721601E659D3500F49225 /* AppDelegate.swift */,
+				19D721621E659D3500F49225 /* Assets.xcassets */,
+				19D721641E659D3500F49225 /* MainMenu.xib */,
+				19D721671E659D3500F49225 /* Info.plist */,
+				19D7218F1E659FEB00F49225 /* Helper.swift */,
+				19D721901E659FEB00F49225 /* FileChooser.swift */,
+			);
+			path = xcode_ext_ruby_worker;
+			sourceTree = "<group>";
+		};
+		19D721721E659D4E00F49225 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				19D721731E659D4E00F49225 /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		19D721751E659D4E00F49225 /* ruby_code_gen */ = {
+			isa = PBXGroup;
+			children = (
+				19D721781E659D4E00F49225 /* SourceEditorExtension.swift */,
+				19D7217A1E659D4E00F49225 /* SourceEditorCommand.swift */,
+				19D721961E65A00200F49225 /* Objc.h */,
+				19D721971E65A00200F49225 /* Objc.m */,
+				19D721981E65A00200F49225 /* codegen-Bridging-Header.h */,
+				19D7217C1E659D4E00F49225 /* Info.plist */,
+				19D721761E659D4E00F49225 /* Supporting Files */,
+				19D721951E65A00100F49225 /* ruby_code_gen-Bridging-Header.h */,
+			);
+			path = ruby_code_gen;
+			sourceTree = "<group>";
+		};
+		19D721761E659D4E00F49225 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				19D721771E659D4E00F49225 /* ruby_code_gen.entitlements */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		19D7215C1E659D3500F49225 /* xcode_ext_ruby_worker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19D7216A1E659D3500F49225 /* Build configuration list for PBXNativeTarget "xcode_ext_ruby_worker" */;
+			buildPhases = (
+				19D721591E659D3500F49225 /* Sources */,
+				19D7215A1E659D3500F49225 /* Frameworks */,
+				19D7215B1E659D3500F49225 /* Resources */,
+				19D721831E659D4E00F49225 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				19D7217E1E659D4E00F49225 /* PBXTargetDependency */,
+			);
+			name = xcode_ext_ruby_worker;
+			productName = xcode_ext_ruby_worker;
+			productReference = 19D7215D1E659D3500F49225 /* xcode_ext_ruby_worker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		19D721701E659D4E00F49225 /* ruby_code_gen */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19D721801E659D4E00F49225 /* Build configuration list for PBXNativeTarget "ruby_code_gen" */;
+			buildPhases = (
+				19D7216D1E659D4E00F49225 /* Sources */,
+				19D7216E1E659D4E00F49225 /* Frameworks */,
+				19D7216F1E659D4E00F49225 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ruby_code_gen;
+			productName = ruby_code_gen;
+			productReference = 19D721711E659D4E00F49225 /* ruby_code_gen.appex */;
+			productType = "com.apple.product-type.xcode-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		19D721551E659D3500F49225 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = z;
+				TargetAttributes = {
+					19D7215C1E659D3500F49225 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 1;
+							};
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+					19D721701E659D4E00F49225 = {
+						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 19D721581E659D3500F49225 /* Build configuration list for PBXProject "xcode_ext_ruby_worker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 19D721541E659D3500F49225;
+			productRefGroup = 19D7215E1E659D3500F49225 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				19D7215C1E659D3500F49225 /* xcode_ext_ruby_worker */,
+				19D721701E659D4E00F49225 /* ruby_code_gen */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		19D7215B1E659D3500F49225 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19D721631E659D3500F49225 /* Assets.xcassets in Resources */,
+				19D721661E659D3500F49225 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19D7216F1E659D4E00F49225 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		19D721591E659D3500F49225 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19D721611E659D3500F49225 /* AppDelegate.swift in Sources */,
+				19D721931E659FEB00F49225 /* FileChooser.swift in Sources */,
+				19D721911E659FEB00F49225 /* Helper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19D7216D1E659D4E00F49225 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19D721991E65A00200F49225 /* Objc.m in Sources */,
+				19D721791E659D4E00F49225 /* SourceEditorExtension.swift in Sources */,
+				19D7217B1E659D4E00F49225 /* SourceEditorCommand.swift in Sources */,
+				19D721921E659FEB00F49225 /* Helper.swift in Sources */,
+				19D721941E659FEB00F49225 /* FileChooser.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		19D7217E1E659D4E00F49225 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 19D721701E659D4E00F49225 /* ruby_code_gen */;
+			targetProxy = 19D7217D1E659D4E00F49225 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		19D721641E659D3500F49225 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19D721651E659D3500F49225 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		19D721681E659D3500F49225 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		19D721691E659D3500F49225 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		19D7216B1E659D3500F49225 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = xcode_ext_ruby_worker/xcode_ext_ruby_worker.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = xcode_ext_ruby_worker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.z.xcode-ext-ruby-worker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		19D7216C1E659D3500F49225 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = xcode_ext_ruby_worker/xcode_ext_ruby_worker.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = xcode_ext_ruby_worker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.z.xcode-ext-ruby-worker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		19D721811E659D4E00F49225 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ruby_code_gen/ruby_code_gen.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ruby_code_gen/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.z.xcode-ext-ruby-worker.ruby-code-gen";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ruby_code_gen/ruby_code_gen-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		19D721821E659D4E00F49225 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ruby_code_gen/ruby_code_gen.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ruby_code_gen/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.z.xcode-ext-ruby-worker.ruby-code-gen";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ruby_code_gen/ruby_code_gen-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		19D721581E659D3500F49225 /* Build configuration list for PBXProject "xcode_ext_ruby_worker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19D721681E659D3500F49225 /* Debug */,
+				19D721691E659D3500F49225 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		19D7216A1E659D3500F49225 /* Build configuration list for PBXNativeTarget "xcode_ext_ruby_worker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19D7216B1E659D3500F49225 /* Debug */,
+				19D7216C1E659D3500F49225 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		19D721801E659D4E00F49225 /* Build configuration list for PBXNativeTarget "ruby_code_gen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19D721811E659D4E00F49225 /* Debug */,
+				19D721821E659D4E00F49225 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 19D721551E659D3500F49225 /* Project object */;
+}
