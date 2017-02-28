@@ -28,8 +28,8 @@ class SourceEditorExtension: NSObject, XCSourceEditorExtension {
         var a = [[XCSourceEditorCommandDefinitionKey: Any]]()
         
         a.append([
-            .classNameKey: "codegen.SourceEditorCommand2",
-            .identifierKey: "codegen.SourceEditorCommand2",
+            .classNameKey: "ruby_code_gen.SourceEditorCommand2",
+            .identifierKey: "ruby_code_gen.SourceEditorCommand2",
             .nameKey: "Open rb Directory"
             ]
         )
@@ -38,7 +38,7 @@ class SourceEditorExtension: NSObject, XCSourceEditorExtension {
                 if let url = item as? URL {
                     if url.pathExtension == "rb" {
                         a.append([
-                            .classNameKey: "codegen.SourceEditorCommand",
+                            .classNameKey: "ruby_code_gen.SourceEditorCommand",
                             .identifierKey: url.lastPathComponent,
                             .nameKey: url.lastPathComponent
                             ])
