@@ -63,13 +63,20 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
                 task.arguments = args
                 
                 let pipe = Pipe()
+                let pipeError = Pipe()
                 task.standardOutput = pipe
+                task.standardError = pipeError
                 task.launch()
                 task.waitUntilExit()
                 
                 let data = pipe.fileHandleForReading.readDataToEndOfFile()
-                output = String(data: data, encoding: .utf8)
-                
+                let data2 = pipeError.fileHandleForReading.readDataToEndOfFile()
+                if let s = String(data: data, encoding: .utf8) {
+                    output = s
+                }
+                if let error = String(data: data2, encoding: .utf8) {
+                    output = (output ?? "") + error
+                }
             }
             return output
         
