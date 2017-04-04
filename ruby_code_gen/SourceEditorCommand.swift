@@ -21,20 +21,26 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         
         let url = rbDirectory().appendingPathComponent(invocation.commandIdentifier)
         if let b = try? url.checkResourceIsReachable(), b {
-            var s = selection(invocation)
+            var (s, lastRow, indentString) = selection(invocation)
             let result = run(cmd: "/usr/bin/ruby", args: [url.path, s])
             s = result ?? "93092xxxxxxx"
-            invocation.buffer.lines.add(s)
+            
+            s = s.components(separatedBy: "\n").map({indentString + $0}).joined(separator: "\n")
+            invocation.buffer.lines.insert("\n"+s, at: lastRow + 1)
         }
         
         completionHandler(nil)
     }
     
-    func selection(_ invocation: XCSourceEditorCommandInvocation) -> String {
+    func selection(_ invocation: XCSourceEditorCommandInvocation) -> (String, Int, String) {
         var s = ""
+        var row = 0
+        var indentString = ""
 
         for selection in invocation.buffer.selections as! [XCSourceTextRange] {
             let lineRange = selection.start.line...selection.end.line
+            
+            row = selection.end.line
             
             for i in lineRange {
                 let line = invocation.buffer.lines[i] as! String
@@ -45,11 +51,13 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
                 } else {
                     s += line
                 }
-                
+                if i == row {
+                    indentString = String(line.characters.prefix{$0==" " || $0=="\t"})
+                }
             }
         }
         
-        return s
+        return (s, row, indentString)
     }
     
     
