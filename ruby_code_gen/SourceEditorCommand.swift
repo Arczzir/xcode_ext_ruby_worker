@@ -21,7 +21,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         
         let url = rbDirectory().appendingPathComponent(invocation.commandIdentifier)
         if let b = try? url.checkResourceIsReachable(), b {
-            var (s, lastRow, indentString) = selection(invocation)
+            var (s, lastRow, indentString) = getSelection(invocation)
             let result = run(cmd: "/usr/bin/ruby", args: [url.path, s])
             s = result ?? "93092xxxxxxx"
             
@@ -32,32 +32,35 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         completionHandler(nil)
     }
     
-    func selection(_ invocation: XCSourceEditorCommandInvocation) -> (String, Int, String) {
+    func getSelection(_ invocation: XCSourceEditorCommandInvocation) -> (String, Int, String) {
         var s = ""
-        var row = 0
+        var lastRowIndex = 0
         var indentString = ""
 
         for selection in invocation.buffer.selections as! [XCSourceTextRange] {
             let lineRange = selection.start.line...selection.end.line
             
-            row = selection.end.line
-            
-            for i in lineRange {
-                let line = invocation.buffer.lines[i] as! String
-                if i == lineRange.first {
-                    s += line.substring(from: selection.start.column.index(of: line))
-                } else if i == lineRange.last {
-                    s += line.substring(to: selection.end.column.index(of: line))
-                } else {
-                    s += line
-                }
-                if i == row {
-                    indentString = String(line.characters.prefix{$0==" " || $0=="\t"})
+            lastRowIndex = selection.end.line
+            var line = ""
+            if lineRange.count == 1 {
+                line = invocation.buffer.lines[lineRange.first!] as! String
+                s = line.substring(with: Range<String.Index>(NSRange(location: selection.start.column, length: selection.end.column - selection.start.column), in: line)!)
+            } else {
+                for i in lineRange {
+                    line = invocation.buffer.lines[i] as! String
+                    if i == lineRange.first {
+                        s += line.substring(from: selection.start.column.index(of: line))
+                    } else if i == lineRange.last {
+                        s += line.substring(to: selection.end.column.index(of: line))
+                    } else {
+                        s += line
+                    }
                 }
             }
+            indentString = String(line.characters.prefix{$0==" " || $0=="\t"})
         }
         
-        return (s, row, indentString)
+        return (s, lastRowIndex, indentString)
     }
     
     
