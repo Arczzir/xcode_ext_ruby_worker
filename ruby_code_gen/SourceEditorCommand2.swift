@@ -14,7 +14,7 @@ class SourceEditorCommand2: NSObject, XCSourceEditorCommand {
     
     func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void ) -> Void {
         // Implement your command here, invoking the completion handler when done. Pass it nil on success, and an NSError on failure.
-        NSWorkspace.shared().open(rbDirectory())
+        NSWorkspace.shared.open(rbDirectory())
 
         completionHandler(nil)
     }

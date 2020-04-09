@@ -21,12 +21,12 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         
         let url = rbDirectory().appendingPathComponent(invocation.commandIdentifier)
         if let b = try? url.checkResourceIsReachable(), b {
-            var (s, lastRow, indentString) = getSelection(invocation)
+            var (s, row, indentString) = getSelection(invocation)
             let result = run(cmd: "/usr/bin/ruby", args: [url.path, s])
             s = result ?? "93092xxxxxxx"
             
             s = s.components(separatedBy: "\n").map({indentString + $0}).joined(separator: "\n")
-            invocation.buffer.lines.insert("\n"+s, at: lastRow + 1)
+            invocation.buffer.lines.insert("\n"+s, at: row)
         }
         
         completionHandler(nil)
@@ -34,13 +34,13 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
     
     func getSelection(_ invocation: XCSourceEditorCommandInvocation) -> (String, Int, String) {
         var s = ""
-        var lastRowIndex = 0
+        var rowIndex = 0
         var indentString = ""
 
         for selection in invocation.buffer.selections as! [XCSourceTextRange] {
             let lineRange = selection.start.line...selection.end.line
             
-            lastRowIndex = selection.end.line
+            rowIndex = selection.start.line
             var line = ""
             if lineRange.count == 1 {
                 line = invocation.buffer.lines[lineRange.first!] as! String
@@ -57,10 +57,10 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
                     }
                 }
             }
-            indentString = String(line.characters.prefix{$0==" " || $0=="\t"})
+            indentString = String((invocation.buffer.lines[lineRange.first!] as! String).prefix{$0==" " || $0=="\t"})
         }
         
-        return (s, lastRowIndex, indentString)
+        return (s, rowIndex, indentString)
     }
     
     

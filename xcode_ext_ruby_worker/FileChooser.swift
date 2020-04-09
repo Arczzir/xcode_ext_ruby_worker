@@ -11,9 +11,9 @@ import Cocoa
 class FileChooser: NSObject {
     var window: NSWindow!
     func showWindow(runModal: Bool = false) {
-        window = NSWindow(contentRect: CGRect(x: 0, y: 0, width: 200, height: 200), styleMask: [.titled, .closable], backing: NSBackingStoreType.buffered, defer: false)
+        window = NSWindow(contentRect: CGRect(x: 0, y: 0, width: 200, height: 200), styleMask: [.titled, .closable], backing: NSWindow.BackingStoreType.buffered, defer: false)
         
-        let closeB = window.standardWindowButton(NSWindowButton.closeButton)!
+        let closeB = window.standardWindowButton(NSWindow.ButtonType.closeButton)!
         closeB.target = self
         closeB.action = #selector(close)
         
@@ -39,7 +39,7 @@ class FileChooser: NSObject {
         
         if runModal {
             DispatchQueue.main.async {
-                NSApplication.shared().runModal(for: self.window)
+                NSApplication.shared.runModal(for: self.window)
             }
         }
     }
@@ -52,12 +52,12 @@ class FileChooser: NSObject {
         }
     }
     
-    func close() {
+    @objc func close() {
         NSApp.terminate(nil)
     }
     
-    func openDirectory() {
-        NSWorkspace.shared().open(rbDirectory())
+    @objc func openDirectory() {
+        NSWorkspace.shared.open(rbDirectory())
     }
     
 }

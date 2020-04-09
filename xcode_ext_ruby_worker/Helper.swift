@@ -38,7 +38,7 @@ func chooseFile(in window: NSWindow, block: @escaping (URL) -> Void) {
     
     panel.beginSheetModal(for: window) { op in
         switch op {
-        case NSFileHandlingPanelOKButton:
+        case .OK:
             if let url = panel.urls.first {
                 block(url)
             }
